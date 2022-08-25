@@ -1,19 +1,32 @@
 import React from 'react'
+import CartWidget from './CartWidget'
 import styles from './NavBar.module.scss'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 
-const Navbar = () => {
+
+const NavBar = () => {
   return (
+    
     <nav className={styles.nav}>
+    <Navbar bg="dark" variant="dark">
     <ul>
-        <li><a href='/'>Home</a></li>
-        <li><a href='/'>About us</a></li>
-        <li><a href='/'>For Women</a></li>
-        <li><a href='/'>For Man</a></li>
-        <li><a href='/'>Contact</a></li>
+    <Container>
+          <Nav className="me-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/">About us</Nav.Link>
+            <Nav.Link href="/">For Man</Nav.Link>
+            <Nav.Link href="/">For Woman</Nav.Link>
+            <Nav.Link href="/">Contact</Nav.Link>
+            <CartWidget className></CartWidget>
+          </Nav>
+        </Container>
     </ul>
+    </Navbar>
     </nav>
   )
 }
 
-export default Navbar
+export default NavBar
